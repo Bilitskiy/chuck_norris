@@ -1,0 +1,23 @@
+.quote{
+    background-color: #422ED4;
+    border-radius: 25px;
+    width: 1072px;
+    height: 162px;
+    padding: 24px 24px;
+    display: flex;
+    margin: 0 auto;
+}
+.chuckphoto{
+    background-image: url(/src/components/Text/chuck.png);
+    background-repeat: no-repeat;
+    background-position: 95% 0;
+    height: 155px;
+}
+
+p{
+    margin: 0 auto;
+    color: white;
+    text-align: center;
+    font-weight: 600;
+    line-height: 150%;
+}

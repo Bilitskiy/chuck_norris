@@ -1,0 +1,18 @@
+button{
+    font-family: 'Raleway', sans-serif;
+    font-size: 16px;
+    font-weight: 800;
+    border-radius: 20px;
+    border: 0;
+    width: 170px;
+    padding: 19px 0px;
+    outline: 0px;
+    background-color:whitesmoke;
+    cursor: pointer;
+    transition: all 0.5s;
+
+}
+
+button:hover{
+    background-color: #422ED4;
+}
