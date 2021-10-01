@@ -11,17 +11,17 @@ const App: React.FC = () => {
   const [data, setData] = useState<string[]>([]);
   const [currentJoke, setCurrentJoke] = useState<string>("")
 
-  const getJoke = (categorie:string) => {
-    let url:string;
+  const getJoke = (categorie: string) => {
+    let url: string;
     if (categorie === "random") url = 'https://api.chucknorris.io/jokes/random'
     else url = `https://api.chucknorris.io/jokes/random?category=${categorie}`
-      fetch(url)
-        .then(res => res.json())
-        .then(
-          (result) => setCurrentJoke(result.value),
-          (err) => console.warn('fatch failed', err)
-        );
-    }
+    fetch(url)
+      .then(res => res.json())
+      .then(
+        (result) => setCurrentJoke(result.value),
+        (err) => console.warn('fatch failed', err)
+      );
+  }
 
   useEffect(() => {
     fetch('https://api.chucknorris.io/jokes/categories')
@@ -30,30 +30,30 @@ const App: React.FC = () => {
         (result) => setData([...result, "random"]),
         (err) => console.warn('fatch failed', err)
       );
-      getJoke("random");
+    getJoke("random");
   }, [])
 
   const hendlerClick = (text: string) => {
-        getJoke(text)
+    getJoke(text)
   }
 
 
   return <div>
-      <Header />
-      <h1>Categories</h1>
-      <div className='flex-container'>
-        {data.map((text, index) => {
-          return (
-            <Menu
-              key={index}
-              text={text}
-              onClick={hendlerClick}
-            />
-          )
-        })}
-      </div>
-      <Text joke={currentJoke} />
+    <Header />
+    <h1>Categories</h1>
+    <div className='flex-container'>
+      {data.map((text, index) => {
+        return (
+          <Menu
+            key={index}
+            text={text}
+            onClick={hendlerClick}
+          />
+        )
+      })}
     </div>
+    <Text joke={currentJoke} />
+  </div>
 }
 
 export default App;
